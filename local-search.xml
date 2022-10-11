@@ -8,7 +8,7 @@
     <link href="/2022/10/10/%E9%87%8D%E8%A3%85%E5%95%A6/"/>
     <url>/2022/10/10/%E9%87%8D%E8%A3%85%E5%95%A6/</url>
     
-    <content type="html"><![CDATA[<blockquote></blockquote><h2 id="创建一个新文章"><a href="#创建一个新文章" class="headerlink" title="创建一个新文章"></a>创建一个新文章</h2><ul><li><p><code>hexo new &quot;title&quot;</code></p><p>生成的新文章就在\source_posts里面啦</p></li><li><p>直接在\source_posts里面创建.md文件即可</p></li></ul><p>写完小文章之后运行 <code>hexo g</code> 以及 <code>hexo d</code> 就可以发布啦</p><h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><ul><li><p>(不使用图床)在source下创建img文件夹专门存放图片,文章中的图片引用路径为&#x2F;img&#x2F;图片名.后缀</p><p>[Thousand Sunny](..&#x2F;img&#x2F;Thousand Sunny.jpg)</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<blockquote></blockquote><h2 id="创建一个新文章"><a href="#创建一个新文章" class="headerlink" title="创建一个新文章"></a>创建一个新文章</h2><ul><li><p><code>hexo new &quot;title&quot;</code></p><p>生成的新文章就在\source_posts里面啦</p></li><li><p>直接在\source_posts里面创建.md文件即可</p></li></ul><p>写完小文章之后运行 <code>hexo g</code> 以及 <code>hexo d</code> 就可以发布啦</p><h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><ul><li>(不使用图床)在source下创建img文件夹专门存放图片,文章中的图片引用路径为&#x2F;img&#x2F;图片名.后缀</li></ul><p>![Thousand Sunny](D:\myblog\source\img\Thousand Sunny.jpg)</p>]]></content>
     
     
     
