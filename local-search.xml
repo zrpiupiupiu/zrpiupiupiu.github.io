@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>用Daovoice实现在线聊天</title>
+    <link href="/2022/10/11/%E7%94%A8Daovoice%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E8%81%8A%E5%A4%A9/"/>
+    <url>/2022/10/11/%E7%94%A8Daovoice%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E8%81%8A%E5%A4%A9/</url>
+    
+    <content type="html"><![CDATA[  <p class="note note-info">记录一下用daovoice实现博客的在线聊天功能</p><h2 id="首先要注册Daovoice账号"><a href="#首先要注册Daovoice账号" class="headerlink" title="首先要注册Daovoice账号"></a>首先要注册Daovoice账号</h2><ul><li><a src="http://dashboard.daovoice.io/get-started?invite_code=7f3d6e70">点击这儿进行注册</a></li></ul><h2 id="注册成功之后点击左边的应用设置-gt-安装到网站-gt-仅匿名用户"><a href="#注册成功之后点击左边的应用设置-gt-安装到网站-gt-仅匿名用户" class="headerlink" title="注册成功之后点击左边的应用设置-&gt;安装到网站-&gt;仅匿名用户"></a>注册成功之后点击左边的<code>应用设置</code>-&gt;<code>安装到网站</code>-&gt;<code>仅匿名用户</code></h2><ul><li>照着他给的copy就完了</li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>如何用hexo写博客</title>
     <link href="/2022/10/10/%E9%87%8D%E8%A3%85%E5%95%A6/"/>
     <url>/2022/10/10/%E9%87%8D%E8%A3%85%E5%95%A6/</url>
