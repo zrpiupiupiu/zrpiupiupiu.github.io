@@ -4,6 +4,44 @@
   
   
   <entry>
+    <title>vue报错分析及解决</title>
+    <link href="/2022/10/13/vue%E6%8A%A5%E9%94%99%E5%88%86%E6%9E%90%E5%8F%8A%E8%A7%A3%E5%86%B3/"/>
+    <url>/2022/10/13/vue%E6%8A%A5%E9%94%99%E5%88%86%E6%9E%90%E5%8F%8A%E8%A7%A3%E5%86%B3/</url>
+    
+    <content type="html"><![CDATA[<h1 id="“xxx”-was-accessed-during-render-but-is-not-defined-on-instance"><a href="#“xxx”-was-accessed-during-render-but-is-not-defined-on-instance" class="headerlink" title="“xxx” was accessed during render but is not defined on instance."></a>“xxx” was accessed during render but is not defined on instance.</h1><p>原因:<br>你的“”xxx‘’属性或者”xxx”方法没有定义</p><p>解决方案:</p><p>查看你的data或者methods或者prop</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Vue Router 搭建</title>
+    <link href="/2022/10/13/Vue-Router-%E6%90%AD%E5%BB%BA/"/>
+    <url>/2022/10/13/Vue-Router-%E6%90%AD%E5%BB%BA/</url>
+    
+    <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>vue入门</title>
     <link href="/2022/10/12/vue%E5%85%A5%E9%97%A8/"/>
     <url>/2022/10/12/vue%E5%85%A5%E9%97%A8/</url>
