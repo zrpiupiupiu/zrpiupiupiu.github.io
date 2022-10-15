@@ -16,15 +16,15 @@
   <meta name="author" content="YiZhi_w">
   <meta name="keywords" content="">
   
-    <meta name="description" content="安装Vue Router路由首先将 Vue Router 安装到刚刚创建的 Vue3 项目中。 1npm i vue-router@4    配置并建立vue router路由 首先要添加配置文件:在src 下新建router 文件夹  在router 下配置文件index.js  &#96;&#96;&#96;javascriptimport { createRouter, createWebH">
+    <meta name="description" content="安装Vue Router路由 首先将 Vue Router 安装到刚刚创建的 Vue3 项目中。 1npm i vue-router@4 创建页面组件 没有把页面直接放在组件component 里面  在src下新建views 文件夹 在views 下面创建HomeView.vue和AboutView.vue 在两个文件里面添加一些内容  HomeView.vue 中: 12345&lt;temp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue Router 搭建">
 <meta property="og:url" content="http://example.com/2022/10/13/Vue-Router-%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="Uncertain Terminal">
-<meta property="og:description" content="安装Vue Router路由首先将 Vue Router 安装到刚刚创建的 Vue3 项目中。 1npm i vue-router@4    配置并建立vue router路由 首先要添加配置文件:在src 下新建router 文件夹  在router 下配置文件index.js  &#96;&#96;&#96;javascriptimport { createRouter, createWebH">
+<meta property="og:description" content="安装Vue Router路由 首先将 Vue Router 安装到刚刚创建的 Vue3 项目中。 1npm i vue-router@4 创建页面组件 没有把页面直接放在组件component 里面  在src下新建views 文件夹 在views 下面创建HomeView.vue和AboutView.vue 在两个文件里面添加一些内容  HomeView.vue 中: 12345&lt;temp">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-10-13T07:52:05.000Z">
-<meta property="article:modified_time" content="2022-10-13T16:18:57.223Z">
+<meta property="article:modified_time" content="2022-10-15T13:14:47.387Z">
 <meta property="article:author" content="YiZhi_w">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary_large_image">
@@ -250,7 +250,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          1.9k 字
         
       </span>
     
@@ -261,7 +261,7 @@
         
         
         
-          18 分钟
+          17 分钟
         
       </span>
     
@@ -312,25 +312,67 @@
             
               <div class="markdown-body">
                 
-                <h2 id="安装Vue-Router路由"><a href="#安装Vue-Router路由" class="headerlink" title="安装Vue Router路由"></a>安装Vue Router路由</h2><p>首先将 Vue Router 安装到刚刚创建的 Vue3 项目中。</p>
+                <h2 id="安装Vue-Router路由">安装Vue Router路由</h2>
+<p>首先将 Vue Router 安装到刚刚创建的 Vue3 项目中。</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jsx">npm i vue-router@<span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="配置并建立vue-router路由"><a href="#配置并建立vue-router路由" class="headerlink" title="配置并建立vue router路由"></a>配置并建立vue router路由</h2><ul>
-<li><p>首先要添加配置文件:在<code>src</code> 下新建<code>router</code> 文件夹</p>
-</li>
-<li><p>在<code>router</code> 下配置文件<code>index.js</code></p>
-</li>
-<li><p>&#96;&#96;&#96;javascript<br>import { createRouter, createWebHashHistory } from ‘vue-router’<br>import HomeView from ‘..&#x2F;views&#x2F;HomeView.vue’</p>
-<p>const routes &#x3D; [<br>  {<br>path: ‘&#x2F;‘,<br>name: ‘home’,<br>component: HomeView<br>  },<br>  {<br>path: ‘&#x2F;about’,<br>name: ‘about’,<br>&#x2F;&#x2F; route level code-splitting<br>&#x2F;&#x2F; this generates a separate chunk (about.[hash].js) for this route<br>&#x2F;&#x2F; which is lazy-loaded when the route is visited.<br>component: () &#x3D;&gt; import(&#x2F;* webpackChunkName: “about” <em>&#x2F; ‘..&#x2F;views&#x2F;AboutView.vue’)<br>  },<br>  {<br>path: ‘&#x2F;infoView’,<br>name: ‘infoView’,<br>&#x2F;&#x2F; route level code-splitting<br>&#x2F;&#x2F; this generates a separate chunk (about.[hash].js) for this route<br>&#x2F;&#x2F; which is lazy-loaded when the route is visited.<br>component: () &#x3D;&gt; import(&#x2F;</em> webpackChunkName: “about” *&#x2F; ‘..&#x2F;views&#x2F;infoView.vue’)<br>  }<br>]</p>
-<p>const router &#x3D; createRouter({<br>  history: createWebHashHistory(),<br>  routes<br>})</p>
-<p>export default router</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs clean"><br>  + 在这个配置文件中,我们使用一个数组来写router指向的每一个分页面<br><br>    + `path` 是路由分配的url<br>    + `name` 是路由指向这个页面的时候显示的名字<br>    + `component` 是路由调用这个页面时加载的组件名<br>    + 这段代码的最后是router的主体,我们创建了一个路由,使用`histor` 模式<br><br>    &lt;p <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;note note-info&quot;</span>&gt;`history` 模式是 `hash` 模式的升级版，主要区别在浏览器链接的显示的不同&lt;/p&gt;<br><br>    - hash 模式：把前端路由路径用 # 号拼接在真实 URL 后面的模式。当 # 后面的路径发生变化时，浏览器不会重新发起请求，而是出发 hashchange 事件。hash 模式链接样式：`http:<span class="hljs-comment">//localhost:8080/#/home`</span><br>    - history 模式：history API 是 HTML5 的新特性，允许开发者直接更改前端路由。history 模式链接样式：`http:<span class="hljs-comment">//localhost:8080/home`</span><br><br>## 在main.js中引入router<br><br>```javascript<br><span class="hljs-keyword">import</span> &#123; createApp &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App.vue&#x27;</span><br><span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./router&#x27;</span><br><br>createApp(App).use(router).mount(<span class="hljs-string">&#x27;#app&#x27;</span>)<br></code></pre></td></tr></table></figure></li>
+<h1>创建页面组件</h1>
+<p>没有把页面直接放在组件<code>component</code> 里面</p>
+<ul>
+<li>在<code>src</code>下新建<code>views</code> 文件夹</li>
+<li>在<code>views</code> 下面创建<code>HomeView.vue</code>和<code>AboutView.vue</code></li>
+<li>在两个文件里面添加一些内容</li>
 </ul>
-<h2 id="在-App-vue-中使用-lt-router-view-gt-和-lt-router-link-gt"><a href="#在-App-vue-中使用-lt-router-view-gt-和-lt-router-link-gt" class="headerlink" title="在 App.vue 中使用&lt;router-view&gt;和&lt;router-link&gt;"></a>在 App.vue 中使用<code>&lt;router-view&gt;</code>和<code>&lt;router-link&gt;</code></h2><p>App.vue 是项目的主组件，可以理解为项目的入口页面，所有页面都在 App.vue 页之下进行切换。接下来我们要来修改 App.vue ，以适应我们添加的 Router 功能。</p>
-<p>文件位置：&#x2F;src&#x2F;App.vue</p>
+<p><code>HomeView.vue</code> 中:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;template&gt;<br>  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">    这是点开的首页噢</span><br><span class="language-xml">  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+<p><code>AboutView.vue</code> 中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;template&gt;<br>  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">    这是about页面喔</span><br><span class="language-xml">  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="配置并建立vue-router路由">配置并建立vue router路由</h2>
+<ul>
+<li>
+<p>首先要添加配置文件:在<code>src</code> 下新建<code>router</code> 文件夹</p>
+</li>
+<li>
+<p>在<code>router</code> 下配置文件<code>index.js</code></p>
+</li>
+<li>
+<pre><code class="language-javascript">import &#123; createRouter, createWebHashHistory &#125; from 'vue-router'
+import HomeView from '../views/HomeView.vue'
+
+const routes = [
+  &#123;
+    path: '/',
+    name: 'home',
+    component: HomeView
+  &#125;,
+  &#123;
+    path: '/about',
+    name: 'about',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =&gt; import(/* webpackChunkName: &quot;about&quot; */ '../views/AboutView.vue')
+  &#125;,
+ 
+]
+
+const router = createRouter(&#123;
+  history: createWebHashHistory(),
+  routes
+&#125;)
+
+export default router
+
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs clean">  <br>  + 在这个配置文件中,我们使用一个数组来写router指向的每一个分页面<br>  <br>    + `path` 是路由分配的url<br>    + `name` 是路由指向这个页面的时候显示的名字<br>    + `component` 是路由调用这个页面时加载的组件名<br>    + 这段代码的最后是router的主体,我们创建了一个路由,使用`histor` 模式<br><br>    &lt;p <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;note note-info&quot;</span>&gt;`history` 模式是 `hash` 模式的升级版，主要区别在浏览器链接的显示的不同&lt;/p&gt;<br><br>    - hash 模式：把前端路由路径用 # 号拼接在真实 URL 后面的模式。当 # 后面的路径发生变化时，浏览器不会重新发起请求，而是出发 hashchange 事件。hash 模式链接样式：`http:<span class="hljs-comment">//localhost:8080/#/home`</span><br>    - history 模式：history API 是 HTML5 的新特性，允许开发者直接更改前端路由。history 模式链接样式：`http:<span class="hljs-comment">//localhost:8080/home`</span><br><br>## 在main.js中引入router<br><br>```javascript<br><span class="hljs-keyword">import</span> &#123; createApp &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App.vue&#x27;</span><br><span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./router&#x27;</span><br><br>createApp(App).use(router).mount(<span class="hljs-string">&#x27;#app&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+</code></pre>
+</li>
+</ul>
+<h2 id="在-App-vue-中使用-router-view-和-router-link">在 App.vue 中使用<code>&lt;router-view&gt;</code>和<code>&lt;router-link&gt;</code></h2>
+<p>App.vue 是项目的主组件，可以理解为项目的入口页面，所有页面都在 App.vue 页之下进行切换。接下来我们要来修改 App.vue ，以适应我们添加的 Router 功能。</p>
+<p>文件位置：/src/App.vue</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;template&gt;<br>  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;nav&quot;</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/&quot;</span>&gt;</span> 首页 <span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span> |</span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/about&quot;</span>&gt;</span> 关于 <span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">router-view</span> /&gt;</span></span><br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+<br>
+
                 
               </div>
             
