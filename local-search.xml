@@ -4,11 +4,30 @@
   
   
   <entry>
+    <title>安卓端入门学习及记录</title>
+    <link href="/2022/10/21/%E5%AE%89%E5%8D%93%E7%AB%AF%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E5%8F%8A%E8%AE%B0%E5%BD%95/"/>
+    <url>/2022/10/21/%E5%AE%89%E5%8D%93%E7%AB%AF%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E5%8F%8A%E8%AE%B0%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[<p class = "note note-info">这里放置着综设学习安卓端的记录</p><hr>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Android</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Anaconda入手</title>
     <link href="/2022/10/20/Anaconda%E5%85%A5%E6%89%8B/"/>
     <url>/2022/10/20/Anaconda%E5%85%A5%E6%89%8B/</url>
     
-    <content type="html"><![CDATA[<p class = "note note-success">前言:Anaconda是一个提供python开发所需的工具包</p><blockquote><p>环境 = “好比一栋楼，在楼里面分配一间屋给各种‘包’放，每间房里面的‘包’互不影响”</p><p>激活环境 = “告诉电脑，我现在要用这个屋子里面的‘包’来做东西了所以要进这间屋子”</p><p>移除环境 = “现在这个屋子里面我原来要用的东西现在不需要了把它赶出去节省电脑空间”</p><p>Conda创建环境相当于创建一个虚拟的空间将这些包都装在这个位置，我不需要了可以直接打包放入垃圾箱，同时也可以针对不同程序的运行环境选择不同的conda虚拟环境进行运行。</p><p><strong>例如：</strong></p><p>env1装了pytorch1.0，env2装了pytorch1.2，需要使用1.0的时候激活env1，需要使用pytorch版本1.2的时候激活env2，这样就不用每次配环境一个一个包重新安装。</p></blockquote><h1>安装与配置</h1><h2 id="安装">安装</h2><ul><li><p>我是直接在<a src="https://www.anaconda.com/products/distribution">官网</a>下载的</p><p><img src="/img/anaconda安装.png"></img></p></li><li><p>接下来就是安装了:</p><p><img src="/img/anaconda安装02.png"></img></p><p>之后跟着一步一步来,耐心等待安装完成</p></li></ul><h2 id="配置">配置</h2><p>在环境变量中添加以下:</p><p><img src="/img/anaconda环境配置.png"></img></p><p>在这些都完成之后,用命令行输入conda,如果是出现如下情况,就说明安装好啦</p><p><img src="/img/anaconda01.png"></img></p><h1>基本使用:</h1><ul><li><p>创建虚拟环境:<code>conda create -n 环境名</code></p><p><img src="/img/anaconda+pytorch虚拟环境安装.png"></img></p></li><li><p>查看当前conda所有环境:<code>conda info --envs</code></p></li><li><p>激活环境:<code>Conda activate 环境名</code></p></li><li><p>查看环境中的包:<code>conda list</code></p></li><li><p>退出当前环境: <code> conda deactivate 环境名</code></p></li><li><p>删除环境: <code>conda remove -n 环境名 --all</code></p></li></ul><p><img src="/img/anaconda02.png"></img></p><p><img src="/img/anaconda03.png"></img></p>]]></content>
+    <content type="html"><![CDATA[<h1>前言</h1><p class = "note note-success">Anaconda是一个提供python开发所需的工具包</p><blockquote><p>环境 = “好比一栋楼，在楼里面分配一间屋给各种‘包’放，每间房里面的‘包’互不影响”</p><p>激活环境 = “告诉电脑，我现在要用这个屋子里面的‘包’来做东西了所以要进这间屋子”</p><p>移除环境 = “现在这个屋子里面我原来要用的东西现在不需要了把它赶出去节省电脑空间”</p><p>Conda创建环境相当于创建一个虚拟的空间将这些包都装在这个位置，我不需要了可以直接打包放入垃圾箱，同时也可以针对不同程序的运行环境选择不同的conda虚拟环境进行运行。</p><p><strong>例如：</strong></p><p>env1装了pytorch1.0，env2装了pytorch1.2，需要使用1.0的时候激活env1，需要使用pytorch版本1.2的时候激活env2，这样就不用每次配环境一个一个包重新安装。</p></blockquote><h1>安装与配置</h1><h2 id="安装">安装</h2><ul><li><p>我是直接在<a src="https://www.anaconda.com/products/distribution">官网</a>下载的</p><p><img src="/img/anaconda安装.png"></img></p></li><li><p>接下来就是安装了:</p><p><img src="/img/anaconda安装02.png"></img></p><p>之后跟着一步一步来,耐心等待安装完成</p></li></ul><h2 id="配置">配置</h2><p>在环境变量中添加以下:</p><p><img src="/img/anaconda环境配置.png"></img></p><p>在这些都完成之后,用命令行输入conda,如果是出现如下情况,就说明安装好啦</p><p><img src="/img/anaconda01.png"></img></p><h1>基本使用:</h1><ul><li><p>创建虚拟环境:<code>conda create -n 环境名</code></p><p><img src="/img/anaconda+pytorch虚拟环境安装.png"></img></p></li><li><p>查看当前conda所有环境:<code>conda info --envs</code></p></li><li><p>激活环境:<code>Conda activate 环境名</code></p></li><li><p>查看环境中的包:<code>conda list</code></p></li><li><p>退出当前环境: <code> conda deactivate 环境名</code></p></li><li><p>删除环境: <code>conda remove -n 环境名 --all</code></p></li></ul><p><img src="/img/anaconda02.png"></img></p><p><img src="/img/anaconda03.png"></img></p>]]></content>
     
     
     
