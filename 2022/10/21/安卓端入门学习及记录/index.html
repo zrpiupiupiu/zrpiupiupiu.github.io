@@ -25,8 +25,10 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/activity.png">
 <meta property="og:image" content="http://example.com/img/android-lanchmode-standard.gif">
+<meta property="og:image" content="http://example.com/img/android-lanchmode-singletop.gif">
+<meta property="og:image" content="http://example.com/img/android-lanchmode-singletask.gif">
 <meta property="article:published_time" content="2022-10-21T05:41:38.000Z">
-<meta property="article:modified_time" content="2022-11-03T09:11:32.858Z">
+<meta property="article:modified_time" content="2022-11-03T11:15:46.818Z">
 <meta property="article:author" content="YiZhi_w">
 <meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary_large_image">
@@ -253,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8.2k 字
+          8.7k 字
         
       </span>
     
@@ -264,7 +266,7 @@
         
         
         
-          69 分钟
+          73 分钟
         
       </span>
     
@@ -329,11 +331,7 @@
 <ul>
 <li>
 <p>再来看到<code>app</code>-&gt;<code>src</code>-&gt;<code>main</code>-&gt;<code>java</code>-&gt;<code>com/example/helloworld</code>-&gt;<code>MainActivity.java</code>,里面有一个 <code>onCreate()</code>方法,<strong>这个方法是一个活动被创建时必定要执行的方法</strong>,<code>onCreate</code>方法中又有一个<code>setContentView()</code>方法,<strong>这个方法给当前活动引入了一个<code>activity_main</code>布局</p>
-</li>
-<li>
-<blockquote>
-<p>android中逻辑和视图分离,所以并不在活动中直接编写界面,而在布局文件中编写</p>
-</blockquote>
+  <p class="note note-info">android中逻辑和视图分离,所以并不在活动中直接编写界面,而在布局文件中编写</p>
 </li>
 <li>
 <p>布局文件放置在<code>main</code>-&gt;<code>res</code>-&gt;<code>layout</code>下面</p>
@@ -540,15 +538,29 @@
 </li>
 <li>
 <p>singleTask</p>
-<p>如果在任务栈中发现了相同的实例，将其上面的任务终止并移除，重用该实例。否则新建实例并入栈</p>
+<p>每次启动该活动时系统首先会在返回栈中检查是否存在该活动的实例,如果发现已经存在则直接使用该实例,并把在这个活动之上的所有活动统统出栈,如果没有发现就会创建一个新的活动实例</p>
 </li>
 <li>
 <p>singleInstance</p>
-<p>允许不同应用，进程线程等共用一个实例，无论从何应用调用该实例都重用</p>
+<p>会启用一个新的返回栈来管理这个活动</p>
 </li>
 </ol>
-<p>想要感受一下的话写一个小demo，然后自己启动自己再点返回键就看出来了。下面详细说说每一种启动模式</p>
+<p>standard:</p>
 <p><img src="/img/android-lanchmode-standard.gif" srcset="/img/loading.gif" lazyload></img></p>
+<p>singleTop:</p>
+<p>启动活动时如果发现返回栈的栈顶已经是该活动,则认为可以直接使用它,不会再创建新的活动实例,如果未处于栈顶,则会创建新的实例</p>
+<p><img src="/img/android-lanchmode-singletop.gif" srcset="/img/loading.gif" lazyload></img></p>
+<p>配制方法实在<code>AndroidMainifest.xm</code>l中进行：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">activity</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;.SingleTopActivity&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:label</span>=<span class="hljs-string">&quot;@string/singletop&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:launchMode</span>=<span class="hljs-string">&quot;singleTop&quot;</span> &gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">activity</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>singleTask:</p>
+<p>与singleTop的区别是singleTask会扫描整个任务栈并制定策略</p>
+<p><img src="/img/android-lanchmode-singletask.gif" srcset="/img/loading.gif" lazyload></img></p>
+<p>使用时需要小心因为会将之前入栈的实例之上的实例全部移除，需要格外小心逻辑。</p>
+<p>配制方法：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">activity</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;.SingleTopActivity&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:label</span>=<span class="hljs-string">&quot;@string/singletop&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:launchMode</span>=<span class="hljs-string">&quot;singleTop&quot;</span> &gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">activity</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1>第三章</h1>
+<h2 id="常用控件的使用">常用控件的使用</h2>
+<h3 id="textView">textView</h3>
 
                 
               </div>
