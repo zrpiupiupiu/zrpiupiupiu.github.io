@@ -24,8 +24,9 @@
 <meta property="og:description" content="这里放置着综设学习安卓端的记录  第一章主要就是做一个介绍,让我们知道对应文件是大概干什么的 我们重点要关注的是app这个文件夹下面的内容.(代码是写在app-&gt;src-&gt;main-&gt;java下面) 论一个项目到底是怎么跑起来的呢 ❓❓❓  让我们首先看到AndroidManifest.xml这个文件  活动需要在这里注册,没有在此注册的活动不能使用,其中 12&lt;actio">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/activity.png">
+<meta property="og:image" content="http://example.com/img/android-lanchmode-standard.gif">
 <meta property="article:published_time" content="2022-10-21T05:41:38.000Z">
-<meta property="article:modified_time" content="2022-11-03T08:05:48.039Z">
+<meta property="article:modified_time" content="2022-11-03T09:11:32.858Z">
 <meta property="article:author" content="YiZhi_w">
 <meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary_large_image">
@@ -252,7 +253,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8k 字
+          8.2k 字
         
       </span>
     
@@ -263,7 +264,7 @@
         
         
         
-          67 分钟
+          69 分钟
         
       </span>
     
@@ -527,7 +528,27 @@
 </ul>
 <p>下面这个是Android官方提供的活动生命周期的示意图:</p>
 <p><img src="/img/activity.png" srcset="/img/loading.gif" lazyload></img></p>
-<h3 id="体验活动的生命周期">体验活动的生命周期</h3>
+<h3 id="活动的启动模式">活动的启动模式</h3>
+<ol>
+<li>
+<p>standard</p>
+<p>活动的默认启动模式,每次都新建一个实例对象</p>
+</li>
+<li>
+<p>singleTop</p>
+<p>如果在任务栈顶发现了相同的实例则重用，否则新建并压入栈顶</p>
+</li>
+<li>
+<p>singleTask</p>
+<p>如果在任务栈中发现了相同的实例，将其上面的任务终止并移除，重用该实例。否则新建实例并入栈</p>
+</li>
+<li>
+<p>singleInstance</p>
+<p>允许不同应用，进程线程等共用一个实例，无论从何应用调用该实例都重用</p>
+</li>
+</ol>
+<p>想要感受一下的话写一个小demo，然后自己启动自己再点返回键就看出来了。下面详细说说每一种启动模式</p>
+<p><img src="/img/android-lanchmode-standard.gif" srcset="/img/loading.gif" lazyload></img></p>
 
                 
               </div>
