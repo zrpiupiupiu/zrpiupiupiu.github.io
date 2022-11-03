@@ -23,11 +23,13 @@
 <meta property="og:site_name" content="Uncertain Terminal">
 <meta property="og:description" content="这里放置着综设学习安卓端的记录  第一章主要就是做一个介绍,让我们知道对应文件是大概干什么的 我们重点要关注的是app这个文件夹下面的内容.(代码是写在app-&gt;src-&gt;main-&gt;java下面) 论一个项目到底是怎么跑起来的呢 ❓❓❓  让我们首先看到AndroidManifest.xml这个文件  活动需要在这里注册,没有在此注册的活动不能使用,其中 12&lt;actio">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/activity.png">
 <meta property="article:published_time" content="2022-10-21T05:41:38.000Z">
-<meta property="article:modified_time" content="2022-10-30T16:22:11.702Z">
+<meta property="article:modified_time" content="2022-11-03T08:05:48.039Z">
 <meta property="article:author" content="YiZhi_w">
 <meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/activity.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -250,7 +252,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7.1k 字
+          8k 字
         
       </span>
     
@@ -261,7 +263,7 @@
         
         
         
-          60 分钟
+          67 分钟
         
       </span>
     
@@ -447,6 +449,85 @@
 </ul>
 <h3 id="返回数据给上一个活动">返回数据给上一个活动</h3>
 <h2 id="活动的生命周期">活动的生命周期</h2>
+<h3 id="返回栈">返回栈</h3>
+<ul>
+<li>
+<p>Android使用任务(Task)来管理活动</p>
+</li>
+<li>
+<p>一组任务就是一组存放在栈里的活动的集合</p>
+</li>
+<li>
+<p>系统总是会把栈顶的活动显示给用户</p>
+</li>
+</ul>
+<h3 id="活动状态">活动状态</h3>
+<blockquote>
+<p>每个活动在其生命周期中最多可能有4种状态</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>运行状态</strong></p>
+<p>活动处于返回栈的栈顶时</p>
+</li>
+<li>
+<p><strong>暂停状态</strong></p>
+<p>活动不再处于栈顶,但仍然是可见时</p>
+</li>
+<li>
+<p><strong>停止状态</strong></p>
+<p>活动不再处于栈顶,并且完全不可见</p>
+</li>
+<li>
+<p><strong>销毁状态</strong></p>
+<p>活动从返回栈中移除后</p>
+</li>
+</ol>
+<h3 id="活动的生存期">活动的生存期</h3>
+<p>Activity类中定义了7个回调方法</p>
+<ol>
+<li>
+<p><code>onCreate()</code></p>
+<p>在活动第一次被创建时调用</p>
+<p>我们在这个方法中完成活动的初始化操作,例如加载布局,绑定事件等</p>
+</li>
+<li>
+<p><code>onStart()</code></p>
+<p>在活动由不可见变为可见时调用</p>
+</li>
+<li>
+<p><code>onResume()</code></p>
+<p>在活动准备好和用户进行交互的时候调用</p>
+<p>此时的活动一定处于返回栈的栈顶,并且处于运行状态</p>
+</li>
+<li>
+<p><code>onPause()</code></p>
+<p>在系统准备去启动或恢复另一个活动的时候调用</p>
+<p>通常会在这个方法中将一些消耗cpu的资源释放掉,以及保存一些关键的数据,但这个方法一定要快,不然会影响到新的栈顶活动的使用</p>
+</li>
+<li>
+<p><code>onStop()</code></p>
+<p>在活动完全不可见的时候调用</p>
+  <p class="note note-warning">它和onPause()方法的主要区别在于,如果启动的新活动是一个对话框式的活动,那么onPause()方法会得到执行,而onStop()方法并不会执行</p>
+</li>
+<li>
+<p><code>onDestory()</code></p>
+<p>在活动被销毁之前调用,之后的活动状态变为销毁状态</p>
+</li>
+<li>
+<p><code>onRestart()</code></p>
+<p>在活动由静止状态转变为运行状态之前调用.即活动被重新启动了</p>
+</li>
+</ol>
+<p><strong>以上7种方法中除了<code>onReatart()</code>方法,其他都是两两对应的,所以又可以将活动分为3种生存期</strong></p>
+<ul>
+<li>完整生存期:从<code>onCreate()</code>到<code>onDestroy()</code>方法之间，活动会在<code>onCreate()</code>完成初始化操作，在<code>onDestroy()</code>中释放占用的资源。</li>
+<li>可见生存期:从<code>onStart()</code>到<code>onStop()</code>方法之间。在这段时间，活动对于用户是可见的，但是并非是在最前端可以与用户进行交互的。</li>
+<li>前台生存期:从 <code>onResume()</code>到<code>onPause</code>方法之间,在这个期间，此活动在所有活动之前并与用户进行交互。我们平时看到和接触最多的也就是这个状态下的活动</li>
+</ul>
+<p>下面这个是Android官方提供的活动生命周期的示意图:</p>
+<p><img src="/img/activity.png" srcset="/img/loading.gif" lazyload></img></p>
+<h3 id="体验活动的生命周期">体验活动的生命周期</h3>
 
                 
               </div>
