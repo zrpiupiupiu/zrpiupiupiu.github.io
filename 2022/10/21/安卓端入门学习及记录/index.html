@@ -28,7 +28,7 @@
 <meta property="og:image" content="http://example.com/img/android-lanchmode-singletop.gif">
 <meta property="og:image" content="http://example.com/img/android-lanchmode-singletask.gif">
 <meta property="article:published_time" content="2022-10-21T05:41:38.000Z">
-<meta property="article:modified_time" content="2022-11-03T11:15:46.818Z">
+<meta property="article:modified_time" content="2022-11-03T14:08:47.558Z">
 <meta property="article:author" content="YiZhi_w">
 <meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary_large_image">
@@ -255,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8.7k 字
+          9.2k 字
         
       </span>
     
@@ -266,7 +266,7 @@
         
         
         
-          73 分钟
+          77 分钟
         
       </span>
     
@@ -560,7 +560,38 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">activity</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;.SingleTopActivity&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:label</span>=<span class="hljs-string">&quot;@string/singletop&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:launchMode</span>=<span class="hljs-string">&quot;singleTop&quot;</span> &gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">activity</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <h1>第三章</h1>
 <h2 id="常用控件的使用">常用控件的使用</h2>
+<p>基本用法:</p>
+<ul>
+<li>给控件定义一个id</li>
+<li>指定控件的宽度和高度</li>
+<li>适当加入控件的特有属性</li>
+<li>…</li>
+</ul>
 <h3 id="textView">textView</h3>
+<ol>
+<li><code>android:gravity</code>指定文字对齐方式,其值有top,bottom,left,right,center等</li>
+<li><code>android:textSize</code>指定文字大小,使用sp作为单位</li>
+<li><code>android:txetColor</code>指定文字颜色</li>
+</ol>
+<h3 id="Button">Button</h3>
+<blockquote>
+<p>系统会对Button中的所有英文字母自动进行大写转换</p>
+<p>如果不想要这种效果,可以使用 <code>android:textAllcaps=&quot;false&quot;</code>来禁用这一默认特性</p>
+</blockquote>
+<h3 id="EditText">EditText</h3>
+<blockquote>
+<p>EditText允许用户在控件中输入和编辑内容,并可以在程序中对这些内容进行处理</p>
+</blockquote>
+<ol>
+<li><code>android:hint</code>指定提示性文本在输入框中,一旦有内容输入,提示性文本就消失</li>
+<li><code>android:maxLines</code>指定EditText的最大行数,当输入内容超过指定行数时,文本就会向上滚动,而EditText则不会再继续拉伸</li>
+</ol>
+<h3 id="ImageView">ImageView</h3>
+<p>这个控件用于在界面上展示图片</p>
+<h3 id="ProgressBar">ProgressBar</h3>
+<p>用于在界面上显示一个进度条,表示我们的程序正在加载一些数据</p>
+<h3 id="AlertDialog">AlertDialog</h3>
+<p>可以在当前界面弹出一个对话框,这个对话框置顶于所有界面元素之上,能够屏蔽掉其他控件的交互能力</p>
 
                 
               </div>
