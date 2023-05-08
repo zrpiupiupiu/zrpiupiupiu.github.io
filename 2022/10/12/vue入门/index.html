@@ -16,16 +16,16 @@
   <meta name="author" content="YiZhi_w">
   <meta name="keywords" content="">
   
-    <meta name="description" content="记录一下自己vue的学习 初识vue 初始化新项目 这一步我是直接使用vue ui 以图形化界面来创建的 项目结构  public: 这个目录包含一些在 Webpack 编译过程中没有加工处理过的文件（有一个例外：index.html 会有一些处理）。  favicon.ico: 这个是项目的图标，当前就是一个 Vue 的 logo。 index.html: 这是应用的模板文件，Vue 应用会通">
+    <meta name="description" content="记录一下自己vue的学习 初识vue vue2与vue3的安装和卸载不一样 123456783xnpm install -g @vue&#x2F;clinpm uninstall -g @vue&#x2F;cli2xnpm install -g vue-clinpm uninstall -g vue-cli 初始化新项目  可以直接使用vue ui 以图形化界面来创建的 使用vue create project创建">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue入门">
 <meta property="og:url" content="http://example.com/2022/10/12/vue%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="Uncertain Terminal">
-<meta property="og:description" content="记录一下自己vue的学习 初识vue 初始化新项目 这一步我是直接使用vue ui 以图形化界面来创建的 项目结构  public: 这个目录包含一些在 Webpack 编译过程中没有加工处理过的文件（有一个例外：index.html 会有一些处理）。  favicon.ico: 这个是项目的图标，当前就是一个 Vue 的 logo。 index.html: 这是应用的模板文件，Vue 应用会通">
+<meta property="og:description" content="记录一下自己vue的学习 初识vue vue2与vue3的安装和卸载不一样 123456783xnpm install -g @vue&#x2F;clinpm uninstall -g @vue&#x2F;cli2xnpm install -g vue-clinpm uninstall -g vue-cli 初始化新项目  可以直接使用vue ui 以图形化界面来创建的 使用vue create project创建">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/2c98eb13d6c62a8204120d2592d5bd51.jpg">
 <meta property="article:published_time" content="2022-10-12T06:53:34.000Z">
-<meta property="article:modified_time" content="2022-10-17T17:00:29.662Z">
+<meta property="article:modified_time" content="2023-04-23T14:54:14.558Z">
 <meta property="article:author" content="YiZhi_w">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary_large_image">
@@ -252,7 +252,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          3k 字
         
       </span>
     
@@ -263,7 +263,7 @@
         
         
         
-          18 分钟
+          25 分钟
         
       </span>
     
@@ -316,8 +316,13 @@
                 
                  <p class = "note note-success">记录一下自己vue的学习</p>
 <h1>初识vue</h1>
+<p>vue2与vue3的安装和卸载不一样</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-number">3</span>x<br><span class="hljs-built_in">npm</span> install -g @vue/cli<br><span class="hljs-built_in">npm</span> uninstall -g @vue/cli<br><br><span class="hljs-number">2</span>x<br><br><span class="hljs-built_in">npm</span> install -g vue-cli<br><span class="hljs-built_in">npm</span> uninstall -g vue-cli<br></code></pre></td></tr></table></figure>
 <h2 id="初始化新项目">初始化新项目</h2>
-<p>这一步我是直接使用<code>vue ui</code> 以图形化界面来创建的</p>
+<ol>
+<li>可以直接使用<code>vue ui</code> 以图形化界面来创建的</li>
+<li>使用<code>vue create project</code>创建</li>
+</ol>
 <h2 id="项目结构">项目结构</h2>
 <ul>
 <li><code>public</code>: 这个目录包含一些在 <a target="_blank" rel="noopener" href="https://webpack.js.org/">Webpack</a> 编译过程中没有加工处理过的文件（有一个例外：index.html 会有一些处理）。
@@ -356,12 +361,38 @@
 </ul>
  <p class = "note note-info">备注： 如果通过 CLI 创建项目时选择了 CSS 预处理器，则可以将 lang 属性添加到 style 标签中，以便 Webpack 可以在构建时处理内容。例如，< style lang ="scss"> 将允许您在样式信息中使用 SCSS 语法。</p>
 <p>对于 <code>App.vue</code>，我们的默认导出将组件的名称设置为 <code>app</code> ，并通过将 <code>HelloWorld</code> 组件添加到 <code>components</code> 属性中来注册它。以这种方式注册组件时，就是在本地注册。本地注册的组件只能在注册它们的组件内部使用，因此您需要将其导入并注册到使用它们的每个组件文件中。这对于拆包 / tree shaking（译者注：一种减小包体积优化方式）很有用，因为并不是应用程序中的每个页面都不一定需要每个组件。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs vue">import HelloWorld from &#x27;./components/HelloWorld.vue&#x27;;<br><br>export default &#123;<br>  name: &#x27;app&#x27;,<br>  components: &#123;<br>    // 可以在这里本地注册组件。<br>    HelloWorld<br>  &#125;<br>&#125;;<br><br></code></pre></td></tr></table></figure>
- <p class = "note note-info">备注： 如果想要使用 TypeScript 语法，你应该将 < script > 标签的 lang 属性设置为 < script lang="ts" > 来告诉编译器你要使用 TypeScript。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> <span class="hljs-title class_">HelloWorld</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./components/HelloWorld.vue&#x27;</span>;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;app&#x27;</span>,<br>  <span class="hljs-attr">components</span>: &#123;<br>    <span class="hljs-comment">// 可以在这里本地注册组件。</span><br>    <span class="hljs-title class_">HelloWorld</span><br>  &#125;<br>&#125;;<br><br></code></pre></td></tr></table></figure>
+ <p class = "note note-info">备注： 如果想要使用 TypeScript 语法，应该将 < script > 标签的 lang 属性设置为 < script lang="ts" > 来告诉编译器你要使用 TypeScript。</p>
 <h2 id="本地运行程序">本地运行程序</h2>
 <p>终端中输入<code>npm run serve</code>,得到如下结果:</p>
 <p><img src = "/img/vue01.png"></img></p>
-<h2 id="vue实现邮件发送功能">vue实现邮件发送功能</h2>
+<h2 id="vue3-中使用axios">vue3 中使用axios</h2>
+<ol>
+<li>安装axios</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">npm install axios<br></code></pre></td></tr></table></figure>
+<h2 id="安装elementplus">安装elementplus</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">npm install element-plus --save<br></code></pre></td></tr></table></figure>
+<p><code>main.js</code>中加入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 新增代码：引入全部组件及样式</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">ElementPlus</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;element-plus&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;element-plus/dist/index.css&#x27;</span>;<br><br>app.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">ElementPlus</span>)<br><br></code></pre></td></tr></table></figure>
+<h2 id="卸载elsint">卸载elsint</h2>
+<p>1:在控制台输入</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">npm uninstall eslint <span class="hljs-comment">--save</span><br></code></pre></td></tr></table></figure>
+<p>2：卸载完成，打开package.json文件，找到eslint版本位置 删除即可 删除此段代码：<code>&quot;@vue/cli-plugin-eslint&quot;: &quot;~5.0.0&quot;,</code></p>
+<p><img src="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202304091616773.png" srcset="/img/loading.gif" lazyload alt="image-20230409161632644"></p>
+<h2 id="vue中使用threejs">vue中使用threejs</h2>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">npm install <span class="hljs-comment">--save three</span><br></code></pre></td></tr></table></figure>
+<h1>vue 访问本地文件 相对路径 文件目录 three.js 加载模型</h1>
+<p><strong>需要注意的一点就是，路径已/开头，是从public文件开始，public下文件url直接就是static/building/human-female-breast-anatomy.quads.glb“</strong></p>
+<h2 id="安装echarts">安装echarts</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vue">npm install echarts --save<br></code></pre></td></tr></table></figure>
+<p><code>main.js</code>中添加<code>import * as echarts from 'echarts'</code></p>
+<h1>echarts 调整canvas内部里面图表与外框大小比例的方法</h1>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-attr">grid</span>:&#123;<br>      <span class="hljs-attr">x</span>:<span class="hljs-number">25</span>,<br>      <span class="hljs-attr">y</span>:<span class="hljs-number">45</span>,<br>      <span class="hljs-attr">x2</span>:<span class="hljs-number">5</span>,<br>      <span class="hljs-attr">y2</span>:<span class="hljs-number">20</span>,<br>      <span class="hljs-attr">borderWidth</span>:<span class="hljs-number">1</span><br>    &#125;,<br></code></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202304152339474.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="安装词云图">安装词云图</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vue">npm install echarts-wordcloud<br></code></pre></td></tr></table></figure>
+<p><code>main.js</code>中添加<code>import 'echarts-wordcloud</code></p>
 
                 
               </div>

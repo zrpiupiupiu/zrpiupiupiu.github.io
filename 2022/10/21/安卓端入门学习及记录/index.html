@@ -16,23 +16,29 @@
   <meta name="author" content="YiZhi_w">
   <meta name="keywords" content="">
   
-    <meta name="description" content="这里放置着综设学习安卓端的记录  第一章主要就是做一个介绍,让我们知道对应文件是大概干什么的 我们重点要关注的是app这个文件夹下面的内容.(代码是写在app-&gt;src-&gt;main-&gt;java下面) 论一个项目到底是怎么跑起来的呢 ❓❓❓  让我们首先看到AndroidManifest.xml这个文件  活动需要在这里注册,没有在此注册的活动不能使用,其中 12&lt;actio">
+    <meta name="description" content="这里放置着综设学习安卓端的记录  第一章主要就是做一个介绍,让我们知道对应文件是大概干什么的 我们重点要关注的是app这个文件夹下面的内容.(代码是写在app-&gt;src-&gt;main-&gt;java下面) 论一个项目到底是怎么跑起来的呢 ❓❓❓   让我们首先看到AndroidManifest.xml这个文件    活动需要在这里注册,没有在此注册的活动不能使用,其中 12&lt;ac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安卓端入门学习及记录">
 <meta property="og:url" content="http://example.com/2022/10/21/%E5%AE%89%E5%8D%93%E7%AB%AF%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E5%8F%8A%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Uncertain Terminal">
-<meta property="og:description" content="这里放置着综设学习安卓端的记录  第一章主要就是做一个介绍,让我们知道对应文件是大概干什么的 我们重点要关注的是app这个文件夹下面的内容.(代码是写在app-&gt;src-&gt;main-&gt;java下面) 论一个项目到底是怎么跑起来的呢 ❓❓❓  让我们首先看到AndroidManifest.xml这个文件  活动需要在这里注册,没有在此注册的活动不能使用,其中 12&lt;actio">
+<meta property="og:description" content="这里放置着综设学习安卓端的记录  第一章主要就是做一个介绍,让我们知道对应文件是大概干什么的 我们重点要关注的是app这个文件夹下面的内容.(代码是写在app-&gt;src-&gt;main-&gt;java下面) 论一个项目到底是怎么跑起来的呢 ❓❓❓   让我们首先看到AndroidManifest.xml这个文件    活动需要在这里注册,没有在此注册的活动不能使用,其中 12&lt;ac">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202211051320303.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202303121403806.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202303121452819.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202303121527939.png">
 <meta property="og:image" content="http://example.com/img/activity.png">
 <meta property="og:image" content="http://example.com/img/android-lanchmode-standard.gif">
 <meta property="og:image" content="http://example.com/img/android-lanchmode-singletop.gif">
 <meta property="og:image" content="http://example.com/img/android-lanchmode-singletask.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202211062257234.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202211101727708.png">
 <meta property="article:published_time" content="2022-10-21T05:41:38.000Z">
-<meta property="article:modified_time" content="2022-11-03T14:11:35.906Z">
+<meta property="article:modified_time" content="2023-03-12T08:12:55.628Z">
 <meta property="article:author" content="YiZhi_w">
 <meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/activity.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202211051320303.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -255,7 +261,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          9.2k 字
+          12k 字
         
       </span>
     
@@ -266,7 +272,7 @@
         
         
         
-          77 分钟
+          98 分钟
         
       </span>
     
@@ -323,23 +329,35 @@
 <p>我们重点要关注的是<code>app</code>这个文件夹下面的内容.(代码是写在<code>app</code>-&gt;<code>src</code>-&gt;<code>main</code>-&gt;<code>java</code>下面)</p>
 <h2 id="论一个项目到底是怎么跑起来的呢-❓❓❓">论一个项目到底是怎么跑起来的呢 ❓❓❓</h2>
 <ul>
-<li>让我们首先看到<code>AndroidManifest.xml</code>这个文件</li>
+<li>
+<p>让我们首先看到<code>AndroidManifest.xml</code>这个文件</p>
+<p><img src="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202211051320303.png" srcset="/img/loading.gif" lazyload alt="202211041958683"></p>
+</li>
 </ul>
-<p>活动需要在这里注册,没有在此注册的活动不能使用,其中</p>
+<p>活动需要在这里注册,<strong>没有在此注册的活动不能使用</strong>,其中</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;action android:name=<span class="hljs-string">&quot;android.intent.action.MAIN&quot;</span> /&gt;<br>     &lt;category android:name=<span class="hljs-string">&quot;android.intent.category.LAUNCHER&quot;</span> /&gt;<br></code></pre></td></tr></table></figure>
 <p>表示MainActivity是这个项目的主活动，在手机上点击应用图标，首先启动的就是这个活动。</p>
 <ul>
 <li>
-<p>再来看到<code>app</code>-&gt;<code>src</code>-&gt;<code>main</code>-&gt;<code>java</code>-&gt;<code>com/example/helloworld</code>-&gt;<code>MainActivity.java</code>,里面有一个 <code>onCreate()</code>方法,<strong>这个方法是一个活动被创建时必定要执行的方法</strong>,<code>onCreate</code>方法中又有一个<code>setContentView()</code>方法,<strong>这个方法给当前活动引入了一个<code>activity_main</code>布局</strong></p>
+<p>再来看到<code>app</code>-&gt;<code>src</code>-&gt;<code>main</code>-&gt;<code>java</code>-&gt;<code>com/example/helloworld</code>-&gt;<code>MainActivity.java</code></p>
+<p>里面有一个 <code>onCreate()</code>方法,<strong>这个方法是一个活动被创建时必定要执行的方法</strong>,</p>
+<p><code>onCreate</code>方法中又有一个<code>setContentView()</code>方法,<strong>这个方法给当前活动引入了一个<code>activity_main</code>布局</strong></p>
   <p class="note note-info">android中逻辑和视图分离,所以并不在活动中直接编写界面,而在布局文件中编写</p>
 </li>
 <li>
-<p>布局文件放置在<code>main</code>-&gt;<code>res</code>-&gt;<code>layout</code>下面</p>
+<p><strong>布局文件</strong>放置在<code>main</code>-&gt;<code>res</code>-&gt;<code>layout</code>下面</p>
 </li>
 <li>
-<p>打开里面的<code>activity_main</code>并切换到视图,就可以看到显示的helloworld在哪定义的啦</p>
+<p>打开里面的<code>activity_main</code>并切换到视图,就可以看到显示的hello world在哪定义的啦</p>
 </li>
 </ul>
+<h2 id="详解项目中的资源">详解项目中的资源</h2>
+<img src="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202303121403806.png" srcset="/img/loading.gif" lazyload alt="image-20230312140317696" style="zoom:50%;"/>
+<p><code>res</code> :</p>
+<pre><code class="hljs">- `drawable`开头的文件夹是用来放**图片**的
+- `mipmap`开头的文件夹是用来放**应用图标**的
+- `values`下是用来放**字符串**的
+</code></pre>
 <h1>第二章</h1>
 <blockquote>
 <p>活动:是一种可以包含用户界面的组件,主要用于和用户进行交互</p>
@@ -347,14 +365,38 @@
 <h2 id="活动的基本用法">活动的基本用法</h2>
 <h3 id="创建活动">创建活动</h3>
 <ol>
-<li>首先在<code>app/src/main/java/com.example.activitytest</code>下面创建一个activity(empty activity),命名为FirstActivity</li>
+<li><code>app/src/main/java/com.example.activitytest</code>下面创建一个activity(empty activity),命名为FirstActivity</li>
 </ol>
+<h3 id="创建和加载布局">创建和加载布局</h3>
+<p><font color = red >Android讲究逻辑和视图分离,每一个活动对应一个布局(用来显示界面内容)</font></p>
+<p><img src="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202303121452819.png" srcset="/img/loading.gif" lazyload alt="image-20230312145236713"></p>
+<p>eg:在布局中添加一个按钮button</p>
+<p>创建布局:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;Button<br>    android:id=<span class="hljs-string">&quot;@+id/button_1&quot;</span><br>    android:layout_width=<span class="hljs-string">&quot;match_parent&quot;</span><br>    android:layout_height=<span class="hljs-string">&quot;wrap_content&quot;</span><br>    android:text=<span class="hljs-string">&quot;Button 1&quot;</span> /&gt;<br></code></pre></td></tr></table></figure>
+<p>上述代码添加了一个Button元素,并且在Button内部增加了几个属性</p>
+<ul>
+<li>
+<p><code>android:id</code>是给当前的元素定义一个唯一标识符</p>
+<p><em>如果要在xml中引用一个id,则写成’@id/id_name’</em></p>
+<p><em>如果是要在xml中定义一个id,则写成’+id/id_name’</em></p>
+</li>
+</ul>
+<p>加载布局:<br>
+在<code>onCreat()</code>方法中加入:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">setContentView(R.layout.first_layout);<br></code></pre></td></tr></table></figure>
+<h3 id="在AndroidManifest文件中注册">在AndroidManifest文件中注册</h3>
+<p><font color = red >所有的活动都需要在AndroidManifest中注册才能生效</font></p>
+<p>Android studio 比较人性化,会帮我们注册</p>
+<p>光注册活动不行,还需要为程序配置主活动</p>
 <h3 id="在活动中使用toast">在活动中使用toast</h3>
-<p>定义一个弹出toast的触发点.在conCreate()中添加以下代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Button</span> <span class="hljs-variable">button1</span> <span class="hljs-operator">=</span> (Button) findViewById(R.id.button_1);<br>        button1.setOnClickListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">View</span>.OnClickListener()&#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span>  <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View v)</span>&#123;<br>                Toast.makeText(FirstActivity.<span class="hljs-built_in">this</span>,<span class="hljs-string">&quot;YOU clicked Button 1&quot;</span>, Toast.LENGTH_SHORT).show();<br>            &#125;<br>        &#125;);<br></code></pre></td></tr></table></figure>
+<p>这就是toast</p>
+<img src="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202303121527939.png" srcset="/img/loading.gif" lazyload alt="image-20230312152702836" style="zoom:50%;" />
+<p>定义一个弹出toast的触发点.在<code>onCreate()</code>中添加以下代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Button</span> <span class="hljs-variable">button1</span> <span class="hljs-operator">=</span> (Button) findViewById(R.id.button_1);<br>button1.setOnClickListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">View</span>.OnClickListener()&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span>  <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View v)</span>&#123;<br>        Toast.makeText(FirstActivity.<span class="hljs-built_in">this</span>,<span class="hljs-string">&quot;YOU clicked Button 1&quot;</span>, Toast.LENGTH_SHORT).show();<br>    &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
 <ul>
 <li>findViewById()方法获取到在布局文件中定义的元素,此方法返回一个View对象</li>
-<li>调用setOnClickListener()方法为按钮注册一个监听器,点击按钮时就会执行监听器中的onClick()方法</li>
+<li>调用setOnClickListener()方法为按钮注册一个监听器,点击按钮时就会执行监听器中的<code>onClick()</code>方法</li>
+<li><code>makeText()</code>创建Toast对象,<code>show()</code>将Toast显示出来</li>
 </ul>
 <h3 id="活动中使用menu">活动中使用menu</h3>
 <ol>
@@ -363,7 +405,7 @@
 </li>
 <li>
 <p>在<code>main.xml</code>中添加一下代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;menu xmlns:android=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;<br><br><br>    &lt;item<br>        android:id=<span class="hljs-string">&quot;@+id/add_item&quot;</span><br>        android:title=<span class="hljs-string">&quot;Add&quot;</span>/&gt;<br>    &lt;item<br>        android:id=<span class="hljs-string">&quot;@+id/remove_item&quot;</span><br>        android:title=<span class="hljs-string">&quot;Remove&quot;</span>/&gt;<br><br>&lt;/menu&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;menu xmlns:android=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;<br>    &lt;item<br>        android:id=<span class="hljs-string">&quot;@+id/add_item&quot;</span><br>        android:title=<span class="hljs-string">&quot;Add&quot;</span>/&gt;<br>    &lt;item<br>        android:id=<span class="hljs-string">&quot;@+id/remove_item&quot;</span><br>        android:title=<span class="hljs-string">&quot;Remove&quot;</span>/&gt;<br><br>&lt;/menu&gt;<br></code></pre></td></tr></table></figure>
 <p><code>item</code>标签用来创建具体的某一个菜单项,通过<code>android:id</code>给这个菜单项指定一个唯一的标识符;通过<code>android:title</code>给这个菜单项指定一个名称</p>
 </li>
 <li>
@@ -388,29 +430,31 @@
 <p>Activity类提供了一个finish()方法，只需修改按钮监听器中的代码即可实现。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java">button1.setOnClickListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">View</span>.OnClickListener()&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View v)</span>&#123;<br>        finish();<br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
 <h2 id="使用Intent在活动之间穿梭">使用Intent在活动之间穿梭</h2>
-<p>Intent是Android程序中各组件之间进行交互的一种重要方式，它不仅可以指明当前组间想要执行的动作，还可以在不同组间之间传递数据。</p>
+<p><font color= red>Intent是Android程序中各组件之间进行交互的一种重要方式</font>，它不仅可以指明当前组间想要执行的动作，还可以在不同组间之间传递数据。</p>
 <p>Intent一般可以用来启动活动、启动服务以及发送广播等场景。</p>
 <p>Intent大致分为显示Intent和隐式Intent两种</p>
 <h3 id="使用显式Intent">使用显式Intent</h3>
 <p>Intent有多个构造函数的重载，其中一个是<code>Intent(Context packageContext,Class&lt;?&gt;cls)</code>,这个构造函数接受两个参数</p>
 <ul>
-<li>第一个参数Context要求提供一个启动活动的上下文</li>
-<li>第二个参数Class则是指定想要启动的目标活动，通过这个构造函数就可以构建出Intent的“意图”。</li>
+<li>第一个参数<code>Context</code>要求提供一个启动活动的上下文</li>
+<li>第二个参数<code>Class</code>则是指定想要启动的目标活动，通过这个构造函数就可以构建出Intent的“意图”。</li>
 </ul>
 <p>如何使用这个Intent?</p>
 <blockquote>
 <p>Activity类中提供了一个<code>startActivity()</code>方法，这个方法是专门用于启动活动的，它接受了一个Intent参数，这里我们将构建好的Intent传入<code>startActivity()</code>方法就可以启动目标活动了</p>
 </blockquote>
 <p>接下来修改<code>FirstActivity</code>中的按钮点击事件</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java">button1.setOnClickListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">View</span>.OnClickListener()&#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View v)</span>&#123;<br><span class="hljs-comment">//                Toast.makeText(FirstActivity.this,&quot;YOU clicked Button 1&quot;, Toast.LENGTH_SHORT).show();</span><br>                <span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>(FirstActivity.<span class="hljs-built_in">this</span>,SecondActivity.class);<br>                startActivity(intent);<br>            &#125;<br>        &#125;);<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java">button1.setOnClickListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">View</span>.OnClickListener()&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View v)</span>&#123;<br>    <span class="hljs-comment">//                Toast.makeText(FirstActivity.this,&quot;YOU clicked Button 1&quot;, Toast.LENGTH_SHORT).show();</span><br>        <span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>(FirstActivity.<span class="hljs-built_in">this</span>,SecondActivity.class);<br>        startActivity(intent);<br>    &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
+<p>首先构建出一个Intent,传入<code>FirstActivity.this</code>作为上下文,传入<code>SecondActivity.class)</code>作为目标活动</p>
+<p><em>所以,我们的&quot;意图&quot;是:在``FirstActivity<code>这个活动的基础上,打开</code>SecondActivity<code>这个活动,然后通过</code>startActivity()`方法来执行这个Intent</em></p>
 <h3 id="使用隐式Intent">使用隐式Intent</h3>
-<p>隐式Intent不明确指出我们想要启动哪一个活动，而是指定了一系列更为抽象的action和category等信息，然后交由系统去分析这个Intent,帮助我们找出合适的活动去启动</p>
+<p>隐式Intent*不明确指出我们想要启动哪一个活动，*而是指定了一系列更为抽象的action和category等信息，然后交由系统去分析这个Intent,帮助我们找出合适的活动去启动</p>
 <ul>
 <li>在<code>AndroidMainifest.xml</code>中添加<code>&lt;intent-filter&gt;</code>：</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;activity<br>           android:name=<span class="hljs-string">&quot;.SecondActivity&quot;</span><br>           android:exported=<span class="hljs-string">&quot;false&quot;</span>&gt;<br>           &lt;intent-filter&gt;<br>               &lt;action android:name=<span class="hljs-string">&quot;com.example.activitest.ACTION_START&quot;</span> /&gt;<br>               &lt;category android:name=<span class="hljs-string">&quot;android.intent.category.DEFAULT&quot;</span> /&gt;<br>           &lt;/intent-filter&gt;<br><br>           &lt;meta-data<br>               android:name=<span class="hljs-string">&quot;android.app.lib_name&quot;</span><br>               android:value=<span class="hljs-string">&quot;&quot;</span> /&gt;<br>       &lt;/activity&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"> &lt;activity<br>    android:name=<span class="hljs-string">&quot;.SecondActivity&quot;</span><br>    android:exported=<span class="hljs-string">&quot;false&quot;</span>&gt;<br>    &lt;intent-filter&gt;<br>        &lt;action android:name=<span class="hljs-string">&quot;com.example.activitest.ACTION_START&quot;</span> /&gt;<br>        &lt;category android:name=<span class="hljs-string">&quot;android.intent.category.DEFAULT&quot;</span> /&gt;<br>    &lt;/intent-filter&gt;<br><br>    &lt;meta-data<br>        android:name=<span class="hljs-string">&quot;android.app.lib_name&quot;</span><br>        android:value=<span class="hljs-string">&quot;&quot;</span> /&gt;<br>&lt;/activity&gt;<br></code></pre></td></tr></table></figure>
 <p>在<code>action</code>标签中我们指明了当前活动可以响应<code>com.example.activity.ACTION_START</code>这个action,而category标签则包含了一些附加信息，更加精确地指明了当前的活动能够响应Intent中还可能带有的category。</p>
-<p>只有<code>&lt;action&gt;</code>和<code>&lt;category&gt;</code>中的内容同时能够匹配上Intent中指定的action和category时，这个活动才能响应该Intent。</p>
+<p><strong>只有<code>&lt;action&gt;</code>和<code>&lt;category&gt;</code>中的内容同时能够匹配上Intent中指定的action和category时，这个活动才能响应该Intent。</strong></p>
 <ul>
 <li>
 <p>修改<code>FirstActivity</code>中的点击事件</p>
@@ -421,7 +465,8 @@
 </li>
 </ul>
 <h3 id="更多隐式Intent的用法">更多隐式Intent的用法</h3>
-<p>使用隐式Intent，不仅可以启动自己程序内的Activity，还可以启动其他程序的Activity，这就使多个应用程序之间的功能共享成为了可能。比如你的应用程序中需要展示一个网页，这时你没有必要自己去实现一个浏览器，只需要调用系统的浏览器来打开这个网页就行了。<br>
+<p>*使用隐式Intent，不仅可以启动自己程序内的Activity，还可以启动其他程序的Activity，*这就使多个应用程序之间的功能共享成为了可能。</p>
+<p>比如你的应用程序中需要展示一个网页，这时你没有必要自己去实现一个浏览器，只需要调用系统的浏览器来打开这个网页就行了。<br>
 修改FirstActivity中按钮点击事件的代码，如下所示：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View v)</span>&#123;<br><span class="hljs-comment">//                Toast.makeText(FirstActivity.this,&quot;YOU clicked Button 1&quot;, Toast.LENGTH_SHORT).show();</span><br><span class="hljs-comment">//                Intent intent = new Intent(FirstActivity.this,SecondActivity.class);</span><br><span class="hljs-comment">//                Intent intent = new Intent(&quot;com.example.activitest.ACTION_START&quot;);</span><br>                <span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>(Intent.ACTION_VIEW);<br>                intent.setData(Uri.parse(<span class="hljs-string">&quot;https://zrpiupiupiu.github.io/&quot;</span>));<br>                startActivity(intent);<br>            &#125;<br></code></pre></td></tr></table></figure>
 <p>这里我们首先指定了Intent的action是<code>Intent.ACTION_VIEW</code>，这是一个Android系统内置的动作，其常量值为<code>android.intent.action.VIEW</code>然后通过<code>Uri.parse()</code>方法将一个网址字符串解析成一个Uri对象，再调用Intent的<code>setData()</code>方法将这个Uri对象传递进去。重新运行程序，在<code>FirstActivity</code>界面点击按钮就可以看到打开了系统浏览器。</p>
@@ -592,6 +637,34 @@
 <p>用于在界面上显示一个进度条,表示我们的程序正在加载一些数据</p>
 <h3 id="AlertDialog">AlertDialog</h3>
 <p>可以在当前界面弹出一个对话框,这个对话框置顶于所有界面元素之上,能够屏蔽掉其他控件的交互能力</p>
+<p>所以AlertDialog一般都是用于提示一些非常重要的内容或者警告信息</p>
+<h3 id="ProgressDialog">ProgressDialog</h3>
+<p>与AlertDialog相似,可以在当前界面弹出一个对话框,这个对话框置顶于所有界面元素之上,能够屏蔽掉其他控件的交互能力.不同的是,ProgressDialog会在对话框中显示一个进度条,一般比较当前操作比较耗时,让用户耐心等待</p>
+<h2 id="详解四种基本布局">详解四种基本布局</h2>
+<p><img src="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202211062257234.png" srcset="/img/loading.gif" lazyload alt="屏幕截图 2022-11-06 220955"></p>
+<h3 id="线性布局LinearLayout">线性布局LinearLayout</h3>
+<p>这个布局会将它所包含的控件在线性方向上依次排列</p>
+<h3 id="相对布局RelativeLayout">相对布局RelativeLayout</h3>
+<p>通过相对定位的方式让控件出现在布局的任何位置</p>
+<p>RelativeLayout中的属性非常多,但大多有规律可循</p>
+<h3 id="帧布局FrameLayout">帧布局FrameLayout</h3>
+<p>比前两种布局简单,应用场景也少许多</p>
+<p>所有的控件都会默认摆放在布局的左上角</p>
+<h3 id="百分比布局">百分比布局</h3>
+<p>直接指定控件在布局中所占的百分比</p>
+<h2 id="创建自定义控件">创建自定义控件</h2>
+<p><img src="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202211101727708.png" srcset="/img/loading.gif" lazyload alt="image-20221110172738596"></p>
+<p>所有的控件都是直接或间接继承自View,所有布局都是直接或间接继承自ViewGroup</p>
+<p>View是Android中最基本的一种ui组件,它可以在屏幕上绘制一块矩形区域,并且能够响应这块区域的各种事件</p>
+<h3 id="引入布局">引入布局</h3>
+<ol>
+<li>
+<p>新建一个布局<code>title.xml</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;LinearLayout xmlns:android=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span><br>    android:layout_width=<span class="hljs-string">&quot;match_parent&quot;</span><br>    android:layout_height=<span class="hljs-string">&quot;match_parent&quot;</span>&gt;<br><br>    &lt;Button<br>        android:id=<span class="hljs-string">&quot;@+id/title_back&quot;</span><br>        android:layout_width=<span class="hljs-string">&quot;wrap_content&quot;</span><br>        android:layout_height=<span class="hljs-string">&quot;wrap_content&quot;</span><br>        android:layout_gravity=<span class="hljs-string">&quot;center&quot;</span><br>        android:layout_margin=<span class="hljs-string">&quot;5dp&quot;</span><br>        android:text=<span class="hljs-string">&quot;Back&quot;</span><br>        android:textColor=<span class="hljs-string">&quot;#fff&quot;</span> /&gt;<br>    &lt;TextView<br>        android:layout_width=<span class="hljs-string">&quot;wrap_content&quot;</span><br>        android:layout_height=<span class="hljs-string">&quot;wrap_content&quot;</span><br>        android:id=<span class="hljs-string">&quot;@+id/title_edit&quot;</span><br>        android:layout_gravity=<span class="hljs-string">&quot;center&quot;</span><br>        android:layout_margin=<span class="hljs-string">&quot;5dp&quot;</span><br>        android:text=<span class="hljs-string">&quot;Edit&quot;</span><br>        android:textColor=<span class="hljs-string">&quot;#fff&quot;</span> /&gt;<br><br>    &lt;Button<br>        android:layout_width=<span class="hljs-string">&quot;wrap_content&quot;</span><br>        android:layout_height=<span class="hljs-string">&quot;wrap_content&quot;</span><br>        android:id=<span class="hljs-string">&quot;@+id/title_edit&quot;</span><br>        android:layout_gravity=<span class="hljs-string">&quot;center&quot;</span><br>        android:layout_margin=<span class="hljs-string">&quot;5dp&quot;</span><br>        android:textColor=<span class="hljs-string">&quot;#fff&quot;</span><br>        android:text=<span class="hljs-string">&quot;Edit&quot;</span> /&gt;<br><br>&lt;/LinearLayout&gt;<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="创建自定义控件-2">创建自定义控件</h3>
+<h2 id="LIstView控件">LIstView控件</h2>
 
                 
               </div>

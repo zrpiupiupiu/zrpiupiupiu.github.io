@@ -1,0 +1,860 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/W_round.png">
+  <link rel="icon" href="/img/W_round.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="YiZhi_w">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="12345678彩色图像：每个像素由R、G、B三个分量表示，每个通道取值范围0~255。数据类型一般为8位无符号整形。灰度图像：每个像素只有一个采样颜色的图像，这类图像通常显示为从最暗黑色到最亮的白色的灰度。二值图像（黑白图像）：每个像素点只有两种可能，0和1.0代表黑色，1代表白色。数据类型通常为1个二进制位。索引图像：类似于查字典，为了解决彩色图像消耗空间大的问题，一般应用于色彩构成比较简单的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="matlab图像处理">
+<meta property="og:url" content="http://example.com/2023/05/04/matlab%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/index.html">
+<meta property="og:site_name" content="Uncertain Terminal">
+<meta property="og:description" content="12345678彩色图像：每个像素由R、G、B三个分量表示，每个通道取值范围0~255。数据类型一般为8位无符号整形。灰度图像：每个像素只有一个采样颜色的图像，这类图像通常显示为从最暗黑色到最亮的白色的灰度。二值图像（黑白图像）：每个像素点只有两种可能，0和1.0代表黑色，1代表白色。数据类型通常为1个二进制位。索引图像：类似于查字典，为了解决彩色图像消耗空间大的问题，一般应用于色彩构成比较简单的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202305041903362.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202305041925380.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202305041933874.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202305041936618.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202305041942009.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202305041954947.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202305081729811.png">
+<meta property="article:published_time" content="2023-05-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-08T13:08:01.369Z">
+<meta property="article:author" content="YiZhi_w">
+<meta property="article:tag" content="matlab">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202305041903362.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>matlab图像处理 - Uncertain Terminal</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"OYBGZ0VuZw8sKvpXnxT0udSn-MdYXbMMI","app_key":"IIJYGg3Lx5DNuBFEljYGeBbq","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/26cf5064.js","daovoice")
+  daovoice('init', {
+    app_id: "26cf5064"
+  });
+  daovoice('update');
+  </script>
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Uncertain Terminal</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/Thousand%20Sunny.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="matlab图像处理"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-05-04 00:00" pubdate>
+          2023年5月4日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          59 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">matlab图像处理</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs matlab">彩色图像：每个像素由R、G、B三个分量表示，每个通道取值范围<span class="hljs-number">0</span>~<span class="hljs-number">255</span>。数据类型一般为<span class="hljs-number">8</span>位无符号整形。<br><br>灰度图像：每个像素只有一个采样颜色的图像，这类图像通常显示为从最暗黑色到最亮的白色的灰度。<br><br>二值图像（黑白图像）：每个像素点只有两种可能，<span class="hljs-number">0</span>和<span class="hljs-number">1.0</span>代表黑色，<span class="hljs-number">1</span>代表白色。数据类型通常为<span class="hljs-number">1</span>个二进制位。<br><br>索引图像：类似于查字典，为了解决彩色图像消耗空间大的问题，一般应用于色彩构成比较简单的场景。<br><br></code></pre></td></tr></table></figure>
+<ul>
+<li>彩色图像（color image）：<strong>每个像素通常是由红（R）、绿（G）、蓝（B）三个分量来表示的，分量介于（0，255）</strong>。RGB图像与索引图像一样都可以用来表示彩色图像。与索引图像一样，它分别用红（R）、绿（G）、蓝（B）三原色的组合来表示每个像素的颜色。但与索引图像不同的是，RGB图像每一个像素的颜色值（由RGB三原色表示）直接存放在图像矩阵中，由于每一像素的颜色需由R、G、B三个分量来表示，M、N分别表示图像的行列数，三个M x N的二维矩阵分别表示各个像素的R、G、B三个颜色分量。RGB图像的数据类型一般为8位无符号整形，通常用于表示和存放真彩色图像，当然也可以存放灰度图像。</li>
+<li>灰度图像（gray image）是<strong>每个像素只有一个采样颜色的图像，这类图像通常显示为从最暗黑色到最亮的白色的灰度</strong>，尽管理论上这个采样可以任何颜色的不同深浅，甚至可以是不同亮度上的不同颜色。灰度图像与黑白图像不同，在计算机图像领域中黑白图像只有黑色与白色两种颜色；但是，灰度图像在黑色与白色之间还有许多级的颜色深度。灰度图像经常是在单个电磁波频谱如可见光内测量每个像素的亮度得到的，用于显示的灰度图像通常用每个采样像素8位的非线性尺度来保存，这样可以有256级灰度（如果用16位，则有65536级）。</li>
+<li>二值图像（binary image），即<strong>一幅二值图像的二维矩阵仅由0、1两个值构成，“0”代表黑色，“1”代白色</strong>。由于每一像素（矩阵中每一元素）取值仅有0、1两种可能，所以计算机中二值图像的数据类型通常为1个二进制位。二值图像通常用于文字、线条图的扫描识别（OCR）和掩膜图像的存储。</li>
+<li>索引图像，即它的<strong>文件结构比较复杂，除了存放图像的二维矩阵外，还包括一个称之为颜色索引矩阵MAP的二维数组</strong>。MAP的大小由存放图像的矩阵元素值域决定，如矩阵元素值域为[0，255]，则MAP矩阵的大小为256Ⅹ3，用MAP=[RGB]表示。MAP中每一行的三个元素分别指定该行对应颜色的红、绿、蓝单色值，MAP中每一行对应图像矩阵像素的一个灰度值，如某一像素的灰度值为64，则该像素就与MAP中的第64行建立了映射关系，该像素在屏幕上的实际颜色由第64行的[RGB]组合决定。也就是说，图像在屏幕上显示时，每一像素的颜色由存放在矩阵中该像素的灰度值作为索引通过检索颜色索引矩阵MAP得到。索引图像的数据类型一般为8位无符号整形（int8），相应索引矩阵MAP的大小为256Ⅹ3，因此一般索引图像只能同时显示256种颜色，但通过改变索引矩阵，颜色的类型可以调整。索引图像的数据类型也可采用双精度浮点型（double）。索引图像一般用于存放色彩要求比较简单的图像，如Windows中色彩构成比较简单的壁纸多采用索引图像存放，如果图像的色彩比较复杂，就要用到RGB真彩色图像。</li>
+</ul>
+<p>判断是什么图片:</p>
+<p>右击图片属性，摘要，点击详细属性，里面有位深度一项。如果是RGB图，位深度是24；如果是灰度和索引图，位深度是8；灰度是白灰黑表示的图，索引图有可能是彩色的，但也是8位深。</p>
+<hr>
+<h2 id="rgb图像转为灰度图像">rgb图像转为灰度图像</h2>
+<p>matlab中图像处理的一些简单函数</p>
+<ol>
+<li><code>imread()</code></li>
+</ol>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs matlab">imread()用于读入各种图像文件<br>语法格式:<br>[X，MAP]=imread(‘filename’,‘fmt’)<br>X，MAP分别为读出的图像数据和颜色表数据，fmt为图像的格式，filename为读取的图像文件（可以加上文件的路径）<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li><code>imwrite()</code></li>
+</ol>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs matlab">imwrite() 用于输出图像<br>语法格式:<br>imwrite(X,map,filename,fmt)<br>按照fmt指定的格式将图像数据矩阵X和调色板map写入文件filename<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>
+<p><code>imfinfo()</code></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs matlab">imfinfo用于读取图像文件的有关信息<br>语法格式:<br>imfinfo(filename,fmt)<br>imfinfo函数返回一个结构info，它反映了该图像的各方面信息，其主要数据包括：文件名（路径）、文件格式、文件格式版本号、文件的修改时间、文件的大小、文件的长度、文件的宽度、每个像素的位数、图像的类型等。<br></code></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202305041903362.png" srcset="/img/loading.gif" lazyload alt="image-20230504190300316"></p>
+</li>
+<li>
+<p><code>imshow()</code></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs matlab">imshow函数是最常用的显示各种图像的函数<br>语法如下:<br>imshow(X,map)<br>X是图像数据矩阵，map是其对应的颜色矩阵，若进行图像处理后不知道图像数据的值域可以用[]代替map<br></code></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>二进制（二值）图像显示方法，在MATLAB中一幅二值图像是uint8或双精度的，该矩阵仅包含0和1。如果希望工具箱中的函数能将图像理解为二进制的，那么所有数据都要是逻辑数据，必须对其进行设置（将所有数据标志均设置on）.可以对数据利用“~”取反操作实现图像逆转即黑白反色。</p>
+</li>
+<li>
+<p>灰度图像的显示方法，正常情况下无需指定灰度图像的调色板格式。可以是使用imshow函数指定要显示灰度级数目，格式<code> imshow(I,n)</code>,n为指定的灰度级数目。用户也可以指定数据的范围，格式imshow(I,[low high])其中low 和high参数分别为数据数组的最小值和最大值。如果为空矩阵（[]），那么imshow函数将自动进行数据标度</p>
+</li>
+<li>
+<p>索引图像，<code>imshow(x,map)</code>对于x的每个个像素，imshow显示存储map中相应行的颜色</p>
+</li>
+<li>
+<p>RGB图像的显示，它直接对颜色进行描述而不使用调色板，格式<code>imshow(RGB)</code>。RGB（：，：，1）　RGB（：，：，2）　　 RGB（：，：，3）</p>
+</li>
+<li>
+<p>特殊显示，如多幅图像的显示，需要显示多幅图像时。可以使用<code>figure</code>语句，它的功能就是重新打开一个图像显示窗口</p>
+<p>例:</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs matlab">I=imread(‘小丑.tif’);<br>Imshow(I);<br>J=imread(‘sunny.tif’);<br><span class="hljs-built_in">figure</span>,imshow(J);<br></code></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202305041925380.png" srcset="/img/loading.gif" lazyload alt="image-20230504192518215"></p>
+</li>
+<li>
+<p>也可以将多幅图像显示在同一个单独的图像窗口中</p>
+<p><code>subplot(m,n,p)</code>这种格式将图形窗口划分为m*n个矩形显示区域并激活第p个(先从左往右,再从上往下)显示区域。</p>
+<p>有两种方法:</p>
+<p>法一:联合<code>imshow</code>和<code>subplot</code>函数</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs matlab">&gt;&gt; subplot(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>),imshow(S)<br>&gt;&gt; subplot(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>),imshow(I)<br></code></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202305041933874.png" srcset="/img/loading.gif" lazyload alt="image-20230504193358789"></p>
+<p>法二:联合使用<code>subimage</code>函数和<code>subplot</code>函数</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs matlab">subplot(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>),subimage(S)<br>subplot(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>),subimage(I)<br></code></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202305041936618.png" srcset="/img/loading.gif" lazyload alt="image-20230504193621537"></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>imhist()</code></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs matlab">imhist函数来计算和显示图像的直方图<br>语法格式:<br>imhist(I,n)<br>imhist(X,map)<br><br>imhist(I,n)计算和显示灰度图像I的直方图，n为指定的灰度级数目，默认值为<span class="hljs-number">256</span><br>imhist(X,map)计算和显示索引色图像X的直方图，map为调色板<br></code></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202305041942009.png" srcset="/img/loading.gif" lazyload alt="image-20230504194235956"></p>
+</li>
+<li>
+<p><code>imadjust()</code></p>
+<p>对比度增强</p>
+<p>如果原图像f(x,y)的灰度范围是[m，M]，我们希望调整后的图像g(x,y)的灰度范围是[n，N]，那么下述变换， ，就可以实现这一要求</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs matlab">imadjust函数，可以实现上述的线性变换对比度增强<br>语法格式:<br>J = imadjust(I,[low_in high_in],[low_out high_out])<br>返回图像I经过直方图调整后的图像J<br><br><br></code></pre></td></tr></table></figure>
+<p>eg:</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs matlab">J = imadjust(S,[<span class="hljs-number">0.3</span> <span class="hljs-number">0.7</span>],[]);<br>imshow(S),<span class="hljs-built_in">figure</span>, imshow(J)<br></code></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202305041954947.png" srcset="/img/loading.gif" lazyload alt="image-20230504195401762"></p>
+</li>
+<li>
+<p><code>im2bw()</code></p>
+<p>将灰度图像转换为二值图像</p>
+</li>
+</ol>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs matlab">BW = im2bw(I,level)<br><br>　　将灰度图像 I 转换为二进制图像。输出图像 BW 将输入图像中亮度值大于 level 的像素替换为值<span class="hljs-number">1</span> (白色)，其他替换为值<span class="hljs-number">0</span>(黑色)。你指定 level 在 [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>]之间，不用管输入图像的等级。函数graythresh 能用来自动计算变量 level 。如果你不指定 level ，im2bw 使用 <span class="hljs-number">0.5</span>。<br><br><br>BW = im2bw(X,map,level)<br><br>将颜色表为 map 的索引图像 X 转换为二进制图像。<br><br><br>BW = im2bw(RGB,level)<br><br>将 RGB 真彩图像转换为二进制图像。Level是归一化的阈值，值域为[<span class="hljs-number">0</span>，<span class="hljs-number">1</span>]。Level可以由函数graythresh（I）来计算。<br>【如果输入图像不是灰度图像， im2bw 首先将图像转换为灰度图像，然后通过阈值将灰度图像转换成二进制图像。】<br></code></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Imabsdiff</td>
+<td>两幅图像的绝对差值</td>
+</tr>
+<tr>
+<td>Imadd</td>
+<td>两幅图像的加法</td>
+</tr>
+<tr>
+<td>Imcomplement</td>
+<td>补足一幅图像</td>
+</tr>
+<tr>
+<td>Imdivide</td>
+<td>两幅图像的除法</td>
+</tr>
+<tr>
+<td>Imlincomb</td>
+<td>计算两幅图像的线性组合</td>
+</tr>
+<tr>
+<td>Immultiply</td>
+<td>两幅图像的乘法</td>
+</tr>
+<tr>
+<td>imsubtract</td>
+<td>两幅图像的减法</td>
+</tr>
+</tbody>
+</table>
+<ol start="8">
+<li>
+<p><code>imadd()</code></p>
+<p>进行两幅图像的加法，或者给一幅图像加上一个常数</p>
+<p>imadd函数将某一幅输入图像的每一个像素值与另一幅图像相应的像素值相加，返回相应的像素值之和作为输出图像</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-comment">%语法格式如下:</span><br>Z = imadd（X，Y）<br><span class="hljs-comment">%X和Y表示需要相加的两幅图像，返回值Z表示得到的加法操作结果</span><br></code></pre></td></tr></table></figure>
+<p>eg:</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs matlab">Cman=imread(<span class="hljs-string">&#x27;cameraman.tif&#x27;</span>);<br>HCman=imadd(Cman,<span class="hljs-number">50</span>);<br>LCman=imadd(Cman,<span class="hljs-number">-50</span>);<br><br><span class="hljs-built_in">figure</span>;<br>subplot(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>),imshow(LCman);<br>subplot(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>),imshow(Cman);<br>subplot(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>),imshow(HCman);<br></code></pre></td></tr></table></figure>
+<p>结果展示:</p>
+<p><img src="https://raw.githubusercontent.com/zrpiupiupiu/learngit/main/202305081729811.png" srcset="/img/loading.gif" lazyload alt="image-20230508172944715"></p>
+</li>
+<li>
+<p><code>imsubtract()</code></p>
+<p>imsubtract函数可以将一幅图像从另一幅图像中减去，或者从一幅图像中减去一个常数</p>
+<p>imsubtract函数将一幅输入图像的像素值从另一幅输入图像相应的像素值中减去，再将这个结果作为输出图像相应的像素值</p>
+</li>
+</ol>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-comment">%语法格式:</span><br>Z = imsubtract(X,Y)；<br><span class="hljs-comment">%Z是X-Y操作的结果</span><br></code></pre></td></tr></table></figure>
+<ol start="10">
+<li>
+<p><code>strel()</code></p>
+<p>structuring element</p>
+<p>运用各种形状和大小构造元素，创建由指定形状shape对应的结构元素。用于膨胀腐蚀及开闭运算等操作的结构元素对象。</p>
+</li>
+</ol>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-comment">%基本语法:</span><br>SE = strel(shape, parameters)<br>shape 是指定希望形状的字符串，其中shape的种类有<br><span class="hljs-string">&#x27;arbitrary&#x27;</span>,<span class="hljs-string">&#x27;pair&#x27;</span>,<span class="hljs-string">&#x27;diamond&#x27;</span>,<span class="hljs-string">&#x27;periodicline&#x27;</span>,<span class="hljs-string">&#x27;disk&#x27;</span>,<span class="hljs-string">&#x27;rectangle&#x27;</span>,<span class="hljs-string">&#x27;line&#x27;</span>,<span class="hljs-string">&#x27;square&#x27;</span>,<span class="hljs-string">&#x27;octagon&#x27;</span><br>参数parameters是指定形状信息的一系列参数，一般控制SE的大小<br><br><br>SE = strel(<span class="hljs-string">&#x27;arbitrary&#x27;</span>, NHOOD)<br>创建一个任意形状的结构元素，NHOOD是由<span class="hljs-number">0</span>和<span class="hljs-number">1</span>组成的矩阵，用于指定形状可以用se=strel(NHOOD)简化<br><br>创建一个指定领域的平面结构化元素。<span class="hljs-number">1</span>的位置定义了领域的形态学操作。NHOOD的中心就是它的中心元素，位置在FLOOR((SIZE(NHOOD) + <span class="hljs-number">1</span>)/<span class="hljs-number">2</span>)。你也可以忽略参数串<span class="hljs-string">&#x27;arbitrary&#x27;</span>而只使用STREL(NHOOD).<br><br>SE = strel(<span class="hljs-string">&#x27;arbitrary&#x27;</span>, NHOOD, HEIGHT)<br>创建一个指定领域的非平面结构化元素。HEIGHT是一个矩阵，大小和NHOOD相同，他指定了NHOOD中任何非零元素的高度值。HEIGHT必须是实有限值。你也可以忽略参数串<span class="hljs-string">&#x27;arbitrary&#x27;</span>而只使用STREL(NHOOD,HEIGHT).<br>creates a nonflat, ball-shaped structuring element (actually an ellipsoid) whose radius in the X-Y plane is R and whose height is H.<br>When N is greater than <span class="hljs-number">0</span>, the ball-shaped structuring element is approximated by a sequence of Nnonflat, line-shaped structuring elements. When N equals <span class="hljs-number">0</span>, no approximation is used, and the structuring element members consist of all pixels whose centers are no greater than R away from the origin.<br><br>例子：<br><br>se1 = strel(<span class="hljs-string">&#x27;square&#x27;</span>,<span class="hljs-number">6</span>) <span class="hljs-comment">% 创建6*6的正方形</span><br><br> <br><br>SE = strel(<span class="hljs-string">&#x27;line&#x27;</span>, LEN, DEG) 创建一个平坦的线型结构，LEN长度，DEG角度<br><br>se2 = strel(<span class="hljs-string">&#x27;line&#x27;</span>,<span class="hljs-number">10</span>,<span class="hljs-number">45</span>) <span class="hljs-comment">% 创建直线长度10，角度45</span><br><br> <br><br>SE = strel(<span class="hljs-string">&#x27;disk&#x27;</span>, R, N)<br><br>创建一个指定半径R的平面圆盘形的结构元素。这里R必须是非负整数. N须是<span class="hljs-number">0</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">8.</span>当N大于<span class="hljs-number">0</span>时,圆盘形结构元素由一组N(或N+<span class="hljs-number">2</span>)个周期线型（ periodic-line ）结构元素来近似。当N等于<span class="hljs-number">0</span>时,不使用近似，即结构元素的所有像素是由到中心像素距离小于等于R的像素组成。N可以被忽略,此时缺省值是<span class="hljs-number">4</span>。<br><br>注: 形态学操作在N&gt;<span class="hljs-number">0</span>情况下要快于N=<span class="hljs-number">0</span>的情形。<br><br>se3 = strel(<span class="hljs-string">&#x27;disk&#x27;</span>,<span class="hljs-number">15</span>) <span class="hljs-comment">% 创建圆盘半径15</span><br><br> <br><br>SE = STREL(<span class="hljs-string">&#x27;ball&#x27;</span>,R,H,N) 创建一个空间椭球状的结构元素，其X-Y平面半径为R，高度为H。R必须为非负整数，H是一个实数。N必须为一个非负偶数，当N&gt;<span class="hljs-number">0</span>时此球形结构元素由一系列空间线段结构元素来近似；当N=<span class="hljs-number">0</span>时不需要近似，结构化元素的成员由所有中心距圆点&gt;R的元素组成，相应的高度值可由R/H指定的椭球中提取。如果N未指定，缺省值<span class="hljs-number">8</span>，并且。注: 使用球体近似的形态学操作N&gt;<span class="hljs-number">0</span>的情况要比N=<span class="hljs-number">0</span>的情况快许多。<br>se4 = strel(<span class="hljs-string">&#x27;ball&#x27;</span>,<span class="hljs-number">15</span>,<span class="hljs-number">5</span>)<br><br><span class="hljs-comment">% 创建椭圆体，半径15，高度5</span><br><br> <br><br>SE = strel(<span class="hljs-string">&#x27;octagon&#x27;</span>, R) 创建一个平坦的八边形结构元素，R是从结构元素原点到八边形边的距离，沿水平轴和垂直轴的度量，R必须是<span class="hljs-number">3</span>的非负倍数<br><br> <br><br>SE = strel(<span class="hljs-string">&#x27;pair&#x27;</span>, OFFSET) 创建一个包含两个成员的平坦结构元素，一个成员在原点，另一个成员由向量OFFSET表示，该向量必须是一个两元素的整数向量<br><br> <br><br>SE = strel(<span class="hljs-string">&#x27;diamond&#x27;</span>, R)<br>创建一个指定大小R平面钻石形状的结构化元素。R是从结构化元素原点到其点的距离，必须为非负整数。<br><br><br>SE = strel(<span class="hljs-string">&#x27;periodicline&#x27;</span>, P, V) 创建一个包含有<span class="hljs-number">2</span>*P+<span class="hljs-number">1</span>个成员的平坦元素，其中V是一个两元素向量，它包含有整数值的行和列的偏移，一个元素在原点，另一个位于 <span class="hljs-number">1</span>*V, <span class="hljs-number">-1</span>*V, <span class="hljs-number">2</span>*V, <span class="hljs-number">-2</span>*V, ..., P*V, -P*V.<br><br> <br><br>SE = strel(<span class="hljs-string">&#x27;rectangle&#x27;</span>, MN) 创建一个平坦的矩形结构，MN指定大小  SE = strel(<span class="hljs-string">&#x27;square&#x27;</span>, W) 创建一个方形的结构元素，边长为N个像素<br><br> <br><br>Nhood=getnhood（se）<span class="hljs-comment">%获得se邻域</span><br></code></pre></td></tr></table></figure>
+<p>两幅图像进行乘法运算可以实现掩模操作，即屏蔽掉图像的某些部分。一幅图像乘以一个常数通常被称为缩放</p>
+<ol start="11">
+<li><code>immulitply(X,Y)</code></li>
+</ol>
+<p>将两幅图像相应的像素值进行元素对元素的乘法操作（MATLAB点乘），并将乘法的运算结果作为输出图形相应的像素值</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-comment">%语法格式:</span><br>Z = immulitply(X,Y)<br><br></code></pre></td></tr></table></figure>
+<ol start="12">
+<li>
+<p><code>ind2gray()</code></p>
+<p>索引图像转换为灰度图像</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-comment">%语法格式</span><br>I = ind2gray(X,cmap)<br><span class="hljs-comment">%将X带有颜色图 的索引图像转换cmap为灰度图像I,</span><br><span class="hljs-comment">%该 ind2gray功能在保持亮度的同时从输入图像中删除色相和饱和度信息。</span><br></code></pre></td></tr></table></figure>
+<p>eg:</p>
+</li>
+</ol>
+<p>除法运算可用于校正成像设备的非线性影响，这在特殊形态的图像（如断层扫描等医学图像）处理中常常用到。图像除法也可以用来检测两幅图像间的区别，但是除法操作给出的是相应像素值的变化比率，而不是每个像素的绝对差异，因而图像除法也称为比率变换。</p>
+<ol start="13">
+<li>
+<p><code>imdivide()</code></p>
+<p>imdivide函数对两幅输入图像的所有相应像素执行元素对元素的除法操作（点除），并将得到的结果作为输出图像的相应像素值</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-comment">%语法格式</span><br>Z = imdivide(X,Y)<br><span class="hljs-comment">%Z=X/Y</span><br><br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/matlab/">#matlab</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>matlab图像处理</div>
+      <div>http://example.com/2023/05/04/matlab图像处理/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>YiZhi_w</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年5月4日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/10/23/jotang%E6%8B%9B%E6%96%B08-1/" title="jotang招新8-1">
+                        <span class="hidden-mobile">jotang招新8-1</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
